@@ -1,0 +1,21 @@
+[mousemode]
+d = leftmouse
+e = rightmouse
+a = middlemouse
+s = macro2(150, 50, scrollup)
+f = macro2(150, 50, scrolldown)
+w = macro2(150, 50, scrollleft)
+r = macro2(150, 50, scrollright)
+; = clear()
+capslock = noop
+
+[shift+mousemode]
+leftshift = clear()
+rightshift = clear()
+
+[command+mousemode]
+a = C-a
+s = C-s
+
+[shift]
+capslock = capslock
