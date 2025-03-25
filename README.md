@@ -14,4 +14,4 @@ My last steps before getting it to work correctly were these:
 
 Those two i2c devices are the touchscreen (901C) and what is listed in dmesg as a touchpad and a mouse (0676).
 
-It's possible only one of those is necessary.
+It's possible only one of those is necessary. Those steps were derived from https://askubuntu.com/questions/1133919/ubuntu-18-04-2-immediately-wakes-up-from-suspend but I also checked the i2c bus since everything in USB was already disabled.
