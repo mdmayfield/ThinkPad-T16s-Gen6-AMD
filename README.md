@@ -15,3 +15,16 @@ My last steps before getting it to work correctly were these:
 Those two i2c devices are the touchscreen (901C) and what is listed in dmesg as a touchpad and a mouse (0676).
 
 It's possible only one of those is necessary. Those steps were derived from https://askubuntu.com/questions/1133919/ubuntu-18-04-2-immediately-wakes-up-from-suspend but I also checked the i2c bus since everything in USB was already disabled.
+
+For now I created a sleep hook, `/usr/lib/systemd/system-sleep/disable-wakeup`:
+
+```
+#!/bin/sh
+
+case "$1" in
+    pre)
+        echo "disabled" | tee /sys/bus/i2c/devices/i2c-ELAN901C:00/power/wakeup
+        echo "disabled" | tee /sys/bus/i2c/devices/i2c-ELAN0676:00/power/wakeup
+        ;;
+esac
+```
