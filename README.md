@@ -1,6 +1,7 @@
 # ~~Precision 5490~~ ThinkPad T16s Gen 6 AMD Linux notes
 
 - keyd: find ID of internal keyboard with `keyd monitor`. Remember to check the list - the keyd virtual keyboard will show your keystrokes.
+  - also, decide what to do about right Ctrl and that stupid Copilot key
 - Need to fix a huge regression in libinput where thumb detection is much less useful...not sure why nobody seemed to notice that
 - Internal microphone has a bad DC offset and low signal level. Not sure where to start with this; might boot Windows to test
 - Firefox has no GPU / video acceleration. It's using 1000% CPU watching fullscreen YouTube at 2x speed. (This might be a consequence of my moving the Precision's hard drive over; leftover Nvidia drivers or something?)
