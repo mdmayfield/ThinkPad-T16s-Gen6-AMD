@@ -29,3 +29,9 @@ case "$1" in
         ;;
 esac
 ```
+
+## Network Issues
+
+I was having a terrible time connecting to my Spectrum router, but randomly. Gradually I learned that it was connecting at 6 GHz when I was in the living room near the router, but 5 GHz or 2.4 GHz in other rooms. The 6 GHz connection does NOT work correctly. No information yet about exactly why. The WiFi chip in this machine shows up in `lspci` as `c2:00.0 Network controller: Qualcomm Technologies, Inc WCN785x Wi-Fi 7(802.11be) 320MHz 2x2 [FastConnect 7800] (rev 01)`. It's very new, and I'm on kernel `6.11.0-19-generic #19~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Feb 17 11:51:52 UTC 2 x86_64 x86_64 x86_64 GNU/Linux` which is not the very latest from upstream.
+
+To work around the problem, in KDE Settings for WiFi, I went to the connection and chose the BSSID (in the popup menu) whose entry mentioned 5 GHz. I imagine that if I go in a more distant room where 2.4 GHz is stronger I'll have to manually change it over to 2.4.
