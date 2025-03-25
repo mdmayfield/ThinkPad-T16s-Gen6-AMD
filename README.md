@@ -2,6 +2,7 @@
 
 - keyd: find ID of internal keyboard with `keyd monitor`. Remember to check the list - the keyd virtual keyboard will show your keystrokes.
 - Need to fix a huge regression in libinput where thumb detection is much less useful...not sure why nobody seemed to notice that
+- Internal microphone has a bad DC offset and low signal level. Not sure where to start with this; might boot Windows to test
 
 ## Suspend issue
 This was difficult to troubleshoot. It's possible not all of these steps were necessary.
