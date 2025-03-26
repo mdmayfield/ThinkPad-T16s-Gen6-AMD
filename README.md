@@ -34,6 +34,7 @@ esac
 ```
 
 **Update:** The laptop still wakes from sleep upon connecting or disconnecting the power cable from USB. I want to experiment some more with preventing this.
+- Look into `/sys/bus/acpi/devices/PNP0C0A:00`
 
 ## Network Issues
 
