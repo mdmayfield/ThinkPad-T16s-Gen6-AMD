@@ -29,3 +29,14 @@ tab = C-tab
 
 [meta]
 h = C-h
+
+[command+option]
+left = C-A-left
+right = C-A-right
+up = C-A-up
+down = C-A-down
+enter = C-A-enter
+backspace = C-A-backspace
+delete = C-A-delete
+tab = C-A-tab
+h = C-A-h
