@@ -1,3 +1,4 @@
+f23+leftshift+leftmeta = overload(copilotheld, toggle(numpad))
 leftalt = layer(command)
 rightalt = layer(command)
 leftmeta = layer(option)
@@ -40,3 +41,31 @@ backspace = C-A-backspace
 delete = C-A-delete
 tab = C-A-tab
 h = C-A-h
+
+[numpad]
+f23+leftshift+leftmeta = clear()
+m = kp0
+, = kpplus
+. = kpdot
+/ = kpslash
+j = kp1
+k = kp2
+l = kp3
+; = kpminus
+u = kp4
+i = kp5
+o = kp6
+p = kpasterisk
+7 = kp7
+8 = kp8
+9 = kp9
+0 = kp0
+enter = kpenter
+= = kpequal
+
+[copilotheld]
+left = C-M-left
+right = C-M-right
+up = C-M-up
+down = C-M-down
+0 = numlock
