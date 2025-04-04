@@ -61,6 +61,10 @@ p = kpasterisk
 enter = kpenter
 = = kpequal
 
+[shift+numpad]
+leftshift = clear()
+rightshift = clear()
+
 [copilotheld]
 left = C-M-left
 right = C-M-right
