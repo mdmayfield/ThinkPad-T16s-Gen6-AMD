@@ -8,6 +8,7 @@
 - [ ] Investigate whether `powertop --autotune` needs to run at every power source change or just at startup. Conduct actual power testing.
 - [ ] Consider fan control: goal is no fan running unless truly needed.
 - [ ] Continue troubleshooting & debugging https://gitlab.freedesktop.org/drm/amd/-/issues/4100
+- [ ] After a while, check to be sure that sleep hook is still necessary for the i2c devices (maybe kernel or other updates resolve this?)
 
 #### Keyboard / Input
 - [x] Keyd setup isn't working right for Ctrl+Alt+Arrow shortcuts – investigate.
