@@ -20,8 +20,9 @@
 
 #### Display / Mouse / Touch
 - [x] Disable middle-click paste (Wayland: https://github.com/milaq/XMousePasteBlock).
-- [ ] Enable cursor hiding while typing on Wayland (https://github.com/jinliu/kwin-effect-hide-cursor).
+- [x] Enable cursor hiding while typing on Wayland (https://github.com/jinliu/kwin-effect-hide-cursor).
   - May require KDE source headers not available in public APIs.
+  - Worked to install the .tar.gz release; never figured out deps to enable building from source
 
 #### Wayland vs X
 - [x] Switch to Wayland?
