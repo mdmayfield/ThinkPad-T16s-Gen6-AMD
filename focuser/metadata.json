@@ -1,0 +1,14 @@
+{
+    "KPlugin": {
+        "Name": "Window Activator/Focuser",
+        "Description": "Auto-activate certain windows when they demand attention instead of just flashing silently in the taskbar",
+        "Id": "focuser",
+        "Version": "1.0",
+        "License": "GPLv3",
+        "Icon": "quickview",
+        "Authors": [{"Name": "David Bazile"}]
+    },
+    "X-Plasma-API": "javascript",
+    "X-Plasma-MainScript": "code/main.js",
+    "KPackageStructure": "KWin/Script"
+}
