@@ -1,4 +1,74 @@
-# ~~Precision 5490~~ ThinkPad T16s Gen 6 AMD Linux notes
+# ThinkPad T16s Gen 6 AMD Linux notes
+---
+
+### To Do
+
+#### System / Kernel
+- [ ] Fix thumb detection regression in `libinput` & submit patches upstream
+- [ ] Investigate whether `powertop --autotune` needs to run at every power source change or just at startup. Conduct actual power testing.
+- [ ] Consider fan control: goal is no fan running unless truly needed.
+- [ ] Continue troubleshooting & debugging https://gitlab.freedesktop.org/drm/amd/-/issues/4100
+
+#### Keyboard / Input
+- [x] Keyd setup isn't working right for Ctrl+Alt+Arrow shortcuts – investigate.
+- [x] Keyd doesn't detect internal keyboard correctly – possibly due to ID change.
+- [x] Evaluate key mapping:
+  - [x] Compose set to right Ctrl
+  - [x] Copilot-0 = Num Lock
+  - [x] Copilot + Arrows = switch desktops
+- [x] Consider numeric keypad mapping via keyd (Copilot key for locking?).
+
+#### Display / Mouse / Touch
+- [x] Disable middle-click paste (Wayland: https://github.com/milaq/XMousePasteBlock).
+- [ ] Enable cursor hiding while typing on Wayland (https://github.com/jinliu/kwin-effect-hide-cursor).
+  - May require KDE source headers not available in public APIs.
+
+#### Wayland vs X
+- [x] Switch to Wayland?
+  - [x] Tried https://github.com/taj-ny/InputActions (previously kwin-gestures).
+  - [x] InputActions is slower than Fusuma – sticking with Fusuma.
+  - [x] Disable built-in KWin gestures via InputActions `touchpad` config:
+    ```yaml
+    gestures:
+      - type: swipe
+        fingers: 3
+        direction: any
+        actions: []
+
+      - type: swipe
+        fingers: 4
+        direction: any
+        actions: []
+    ```
+
+- [x] Investigate if Fusuma needs `-d` in KDE Autostart (not `.xsessionrc`). Consider doing same for xbanish.
+
+#### GTK Settings
+- [x] Set both `~/.config/gtk-3.0/settings.ini` and `gtk-4.0/settings.ini`:
+    ```ini
+    [Settings]
+    gtk-primary-button-warps-slider=false
+    ```
+
+#### Miscellaneous Issues
+- [ ] Investigate why `systemctl restart keyd` causes Bluetooth to re-enable.
+- [x] Investigate why `sudo` takes 10s and re-enables Bluetooth on OEM kernel. (not seeing anymore?)
+- [ ] BIOS setting check: May want to look into UMA Framebuffer Size in future.
+- [ ] Possible to accept keyboard login password only without waiting for fprint to timeout, fail, or succeed?
+- [ ] Sort out internal microphone...prefer a solution that is firmware based for the DC offset thing (not sure if an ALSA filter will be sufficient dynamic range)
+
+---
+### Resolved / No Longer Relevant
+- **Wake on AC connect/disconnect**: wakes up briefly then sleeps again – acceptable behavior.
+- **Fingerprint reader going missing after suspend**: possibly resolved by kernel 6.14.
+- **Bluetooth turns on spontaneously after resume or systemctl keyd restart**: low power drain; not worth fixing.
+- **Shortcut to toggle touchscreen**: working in Wayland using `qdbus`.
+- **Crash-on-resume**: seems to have stopped as of 2025-04-04.
+- **`amdgpu.dcdebugmask=0x200` kernel param**: redundant or already applied.
+
+---
+
+## Older content
 
 - keyd: find ID of internal keyboard with `keyd monitor`. Remember to check the list - the keyd virtual keyboard will show your keystrokes.
   - also, decide what to do about right Ctrl and that stupid Copilot key
