@@ -55,7 +55,9 @@
 - [ ] Investigate why `systemctl restart keyd` causes Bluetooth to re-enable.
 - [x] Investigate why `sudo` takes 10s and re-enables Bluetooth on OEM kernel. (not seeing anymore?)
 - [ ] BIOS setting check: May want to look into UMA Framebuffer Size in future.
-- [ ] Possible to accept keyboard login password only without waiting for fprint to timeout, fail, or succeed?
+- [x] Possible to accept keyboard login password only without waiting for fprint to timeout, fail, or succeed?
+  - See below for pam.d/common-auth settings
+  - Annoyingly this isn't easy to do; see https://unix.stackexchange.com/questions/615555/pam-fingerprint-login-blocks-password
 - [ ] Sort out internal microphone...prefer a solution that is firmware based for the DC offset thing (not sure if an ALSA filter will be sufficient dynamic range)
 
 ---
@@ -66,6 +68,22 @@
 - **Shortcut to toggle touchscreen**: working in Wayland using `qdbus`.
 - **Crash-on-resume**: seems to have stopped as of 2025-04-04.
 - **`amdgpu.dcdebugmask=0x200` kernel param**: redundant or already applied.
+
+### PAM settings
+note max-tries=3 now, plus only 5sec to mitigate the annoying delay
+```
+auth    [success=2 default=ignore]      pam_fprintd.so max-tries=3 timeout=5 # debug
+auth    [success=1 default=ignore]      pam_unix.so nullok try_first_pass
+# here's the fallback if no module succeeds
+auth    requisite                       pam_deny.so
+# prime the stack with a positive return value if there isn't one already;
+# this avoids us returning an error just because nothing sets a success code
+# since the modules above will each just jump around
+auth    required                        pam_permit.so
+# and here are more per-package modules (the "Additional" block)
+auth    optional                        pam_cap.so 
+# end of pam-auth-update config
+```
 
 ---
 
