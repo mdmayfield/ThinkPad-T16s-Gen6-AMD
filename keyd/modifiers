@@ -3,7 +3,7 @@ leftalt = layer(command)
 rightalt = layer(command)
 leftmeta = layer(option)
 leftcontrol = layer(meta)
-rightcontrol = rightcontrol
+rightcontrol = overload(meta, rightcontrol)
 
 [command:C]
 left = A-left
