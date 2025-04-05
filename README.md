@@ -51,6 +51,7 @@
     [Settings]
     gtk-primary-button-warps-slider=false
     ```
+Make Firefox use KDE file pickers. "To use the KDE file selection and print dialogs in Firefox 64 or newer, install xdg-desktop-portal and xdg-desktop-portal-kde, then set widget.use-xdg-desktop-portal.mime-handler to 1 in about:config. You should also change widget.use-xdg-desktop-portal.file-picker from 2 to 1." https://superuser.com/questions/1740620/firefox-file-chooser-choose-another
 
 #### Miscellaneous Issues
 - [ ] Investigate why `systemctl restart keyd` causes Bluetooth to re-enable.
