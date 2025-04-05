@@ -63,6 +63,13 @@ Make Firefox use KDE file pickers. "To use the KDE file selection and print dial
 - [ ] Sort out internal microphone...prefer a solution that is firmware based for the DC offset thing (not sure if an ALSA filter will be sufficient dynamic range)
 - [x] Firefox and other windows don't raise; they just "need attention". Investigate https://www.bazile.org/writing/2025/kde_activate_window_on_attention.html or similar
   - see 'focuser' directory here, copied from that blog. make a link of focuser dir to ~/.local/share/kwin/scripts/focuser
+
+YouTube letterbox top & bottom are dark gray instead of black; restore to black by filter in uBlock Origin:
+```
+! 2025-04-05 get rid of gray letterbox
+www.youtube.com##div#cinematics-full-bleed-container
+```
+
 ---
 ### Resolved / No Longer Relevant
 - **Wake on AC connect/disconnect**: wakes up briefly then sleeps again – acceptable behavior.
