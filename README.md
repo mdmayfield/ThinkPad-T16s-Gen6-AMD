@@ -72,6 +72,8 @@ www.youtube.com##div#cinematics-full-bleed-container
 
 - [ ] Pressing F11 without Fn ("Microsoft Phone Link" according to T14s manual) gives error in keyd monitor: `ERROR: unsupported evdev code: 0x1bf` - make this recognizable
 
+In Firefox, set `media.webspeech.synth.enabled` to false (and `systemctl disable speech-dispatcher`?) to avoid a bunch of unnecessary speech-dispatcher processes
+
 ---
 ### Resolved / No Longer Relevant
 - **Wake on AC connect/disconnect**: wakes up briefly then sleeps again – acceptable behavior.
