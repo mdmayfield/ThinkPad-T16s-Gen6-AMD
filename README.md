@@ -88,6 +88,11 @@ Running into this issue https://connect.mozilla.org/t5/discussions/firefox-from-
 ```
 qdbus org.kde.KWin /org/kde/KWin/InputDevice/event6 org.freedesktop.DBus.Properties.Get org.kde.KWin.InputDevice enabled | grep -q true && qdbus org.kde.KWin /org/kde/KWin/InputDevice/event6 org.freedesktop.DBus.Properties.Set org.kde.KWin.InputDevice enabled false || qdbus org.kde.KWin /org/kde/KWin/InputDevice/event6 org.freedesktop.DBus.Properties.Set org.kde.KWin.InputDevice enabled true
 ```
+  - This will find the touchscreen input device itself (mods needed to work with above):
+```
+for dev in /sys/class/input/event*/device/name; do [ "$(cat $dev)" == "ELAN901C:00 04F3:4275" ] && echo "/dev/input/$(basename $(dirname $(dirname $dev)))"; done
+/dev/input/event6
+```
 
 - **Crash-on-resume**: seems to have stopped as of 2025-04-04.
 - **`amdgpu.dcdebugmask=0x200` kernel param**: redundant or already applied.
