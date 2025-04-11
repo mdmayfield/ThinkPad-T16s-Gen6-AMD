@@ -83,6 +83,11 @@ Running into this issue https://connect.mozilla.org/t5/discussions/firefox-from-
 - **Fingerprint reader going missing after suspend**: possibly resolved by kernel 6.14.
 - **Bluetooth turns on spontaneously after resume or systemctl keyd restart**: low power drain; not worth fixing.
 - **Shortcut to toggle touchscreen**: working in Wayland using `qdbus`.
+  - ...well sort of. It was on event5 but is now on event6? Not sure why and it seems to be a huge pain to detect using qdbus.
+```
+qdbus org.kde.KWin /org/kde/KWin/InputDevice/event6 org.freedesktop.DBus.Properties.Get org.kde.KWin.InputDevice enabled | grep -q true && qdbus org.kde.KWin /org/kde/KWin/InputDevice/event6 org.freedesktop.DBus.Properties.Set org.kde.KWin.InputDevice enabled false || qdbus org.kde.KWin /org/kde/KWin/InputDevice/event6 org.freedesktop.DBus.Properties.Set org.kde.KWin.InputDevice enabled true
+```
+
 - **Crash-on-resume**: seems to have stopped as of 2025-04-04.
 - **`amdgpu.dcdebugmask=0x200` kernel param**: redundant or already applied.
 
