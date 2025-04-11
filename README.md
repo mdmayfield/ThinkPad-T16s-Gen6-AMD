@@ -62,6 +62,7 @@ Make Firefox use KDE file pickers. "To use the KDE file selection and print dial
   - See below for pam.d/common-auth settings
   - Annoyingly this isn't easy to do; see https://unix.stackexchange.com/questions/615555/pam-fingerprint-login-blocks-password
 - [ ] Sort out internal microphone...prefer a solution that is firmware based for the DC offset thing (not sure if an ALSA filter will be sufficient dynamic range)
+  - This may be relevant: https://github.com/Manawyrm/gpd-pocket-4-pipewire/tree/main/pipewire.conf.d
 - [x] Firefox and other windows don't raise; they just "need attention". Investigate https://www.bazile.org/writing/2025/kde_activate_window_on_attention.html or similar
   - see 'focuser' directory here, copied from that blog. make a link of focuser dir to ~/.local/share/kwin/scripts/focuser
 
