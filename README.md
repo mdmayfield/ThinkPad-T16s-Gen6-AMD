@@ -74,6 +74,8 @@ www.youtube.com##div#cinematics-full-bleed-container
 
 In Firefox, set `media.webspeech.synth.enabled` to false (and `systemctl disable speech-dispatcher`?) to avoid a bunch of unnecessary speech-dispatcher processes
 
+Running into this issue https://connect.mozilla.org/t5/discussions/firefox-from-mozilla-apt-repo-keeps-asking-to-be-set-as-default/td-p/74092 - for now just disabled default browser check since it is, in fact, default
+
 ---
 ### Resolved / No Longer Relevant
 - **Wake on AC connect/disconnect**: wakes up briefly then sleeps again – acceptable behavior.
