@@ -1,3 +1,5 @@
+#!/bin/bash
+
 TOUCHSCREEN=$(for dev in /sys/class/input/event*/device/name; do
     [ "$(cat "$dev")" == "ELAN901C:00 04F3:4275" ] && \
     echo "$(basename "$(dirname "$(dirname "$dev")")")" && break
