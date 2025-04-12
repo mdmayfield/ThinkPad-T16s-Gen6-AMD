@@ -2,6 +2,7 @@ const APP_LIST = [
     'org.kde.konsole',
     'org.mozilla.firefox',
     'firefox',
+    'firefox-bin',
     'thunderbird',
     'thunderbird-esr',
     'org.kde.kate'
@@ -23,7 +24,6 @@ function main() {
 function configure(window) {
     if (!isAllowed(window)) {
         console.info('[focuser] SKIP DISALLOWED', window.resourceClass);
-        console.info('[focuser] resourceName is', window.resourceName);
         return;
     }
 
