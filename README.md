@@ -78,6 +78,9 @@ In Firefox, set `media.webspeech.synth.enabled` to false (and `systemctl disable
 
 Running into this issue https://connect.mozilla.org/t5/discussions/firefox-from-mozilla-apt-repo-keeps-asking-to-be-set-as-default/td-p/74092 - for now just disabled default browser check since it is, in fact, default
 
+2025-04-14 fingerprint reader quit working after resume; reboot fixed it. For reference the fingerprint reader device does show up in lsusb at least when it works, as
+Bus 003 Device 002: ID 06cb:00f9 Synaptics, Inc.
+
 ---
 ### Resolved / No Longer Relevant
 - **Wake on AC connect/disconnect**: wakes up briefly then sleeps again – acceptable behavior.
