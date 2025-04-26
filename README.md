@@ -117,6 +117,15 @@ auth    optional                        pam_cap.so
 # end of pam-auth-update config
 ```
 
+Still occasional hard crashes. >:( Seems to always be during heavy seeking on YouTube in Firefox. While browsing this https://bugzilla.mozilla.org/show_bug.cgi?id=1892845 got a gut feeling about
+
+```
+>    IIUC comment #1 said it's working fine with mpv.
+
+I see, thanks. In such case please set 'media.ffmpeg.vaapi.force-surface-zero-copy' to 0 at about:config, restart browser and try again. That's now mpv plays the clips.
+```
+so I will try that.
+
 ---
 
 ## Older content
