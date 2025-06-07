@@ -1,0 +1,74 @@
+touchpad:
+  gestures:
+    - type: swipe
+      fingers: 3
+      direction: any
+      actions: []
+
+    - type: swipe
+      fingers: 3
+      direction: right
+      actions:
+        - on: begin
+          plasma_shortcut: kwin,Switch One Desktop to the Right
+
+    - type: swipe
+      fingers: 3
+      direction: left
+      actions:
+        - on: begin
+          plasma_shortcut: kwin,Switch One Desktop to the Left
+
+    - type: swipe
+      fingers: 3
+      direction: up
+      actions:
+        - on: begin
+          plasma_shortcut: kwin,Switch One Desktop Up
+
+    - type: swipe
+      fingers: 3
+      direction: down
+      actions:
+        - on: begin
+          plasma_shortcut: kwin,Switch One Desktop Down
+
+    - type: pinch
+      fingers: 4
+      direction: any
+      actions:
+        - plasma_shortcut: kwin,Grid View
+          on: begin
+
+    - type: swipe
+      fingers: 4
+      direction: any
+      actions: []
+
+    - type: swipe
+      fingers: 4
+      direction: right
+      actions:
+        - on: begin
+          plasma_shortcut: kwin,Window One Desktop to the Right
+
+    - type: swipe
+      fingers: 4
+      direction: left
+      actions:
+        - on: begin
+          plasma_shortcut: kwin,Window One Desktop to the Left
+
+    - type: swipe
+      fingers: 4
+      direction: up
+      actions:
+        - on: begin
+          plasma_shortcut: kwin,Window One Desktop Up
+
+    - type: swipe
+      fingers: 4
+      direction: down
+      actions:
+        - on: begin
+          plasma_shortcut: kwin,Window One Desktop Down
