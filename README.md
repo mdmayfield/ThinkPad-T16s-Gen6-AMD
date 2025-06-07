@@ -30,18 +30,19 @@
 - [x] Switch to Wayland?
   - [x] Tried https://github.com/taj-ny/InputActions (previously kwin-gestures).
   - [x] InputActions is slower than Fusuma – sticking with Fusuma.
-  - [x] Disable built-in KWin gestures via InputActions `touchpad` config:
+  - [x] Disable built-in KWin gestures via InputActions `touchpad` config - in ~/.config/kwingestures.yaml:
     ```yaml
-    gestures:
-      - type: swipe
-        fingers: 3
-        direction: any
-        actions: []
+touchpad:
+  gestures:
+    - type: swipe
+      fingers: 3
+      direction: any
+      actions: []
 
-      - type: swipe
-        fingers: 4
-        direction: any
-        actions: []
+    - type: swipe
+      fingers: 4
+      direction: any
+      actions: []
     ```
 
 - [x] Investigate if Fusuma needs `-d` in KDE Autostart (not `.xsessionrc`). Consider doing same for xbanish.
