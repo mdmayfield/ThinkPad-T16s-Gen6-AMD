@@ -1,3 +1,6 @@
+[main]
+capslock = overload(capsheld, toggle(mousemode))
+
 [mousemode]
 d = leftmouse
 e = rightmouse
