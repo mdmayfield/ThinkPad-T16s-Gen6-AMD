@@ -11,6 +11,7 @@ w = macro2(150, 50, scrollleft)
 r = macro2(150, 50, scrollright)
 ; = clear()
 capslock = layer(capsheld)
+leftmouse = clearm(leftmouse)
 
 [shift+mousemode]
 leftshift = clear()
