@@ -7,7 +7,7 @@ f = macro2(150, 50, scrolldown)
 w = macro2(150, 50, scrollleft)
 r = macro2(150, 50, scrollright)
 ; = clear()
-capslock = noop
+capslock = layer(capsheld)
 
 [shift+mousemode]
 leftshift = clear()
@@ -19,3 +19,6 @@ s = C-s
 
 [shift]
 capslock = capslock
+
+[capsheld]
+space = clear()
