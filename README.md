@@ -174,3 +174,15 @@ I was having a terrible time connecting to my Spectrum router, but randomly. Gra
 To work around the problem, in KDE Settings for WiFi, I went to the connection and chose the BSSID (in the popup menu) whose entry mentioned 5 GHz. I imagine that if I go in a more distant room where 2.4 GHz is stronger I'll have to manually change it over to 2.4.
 
 (One of the confusing symptoms of this issue was that the WiFi would work fine in one room and I would carry the laptop into the living room, where the router happens to be. If the laptop went to sleep and resumed, it would restart the wireless connection, and introduce the issue, presumably because that's when it renegotiates with the Spectrum WiFi router which frequency to connect on. If I was in a physical location where the 6 GHz connection was strong, it would default to that and the problems would begin.)
+
+## Annoying External Monitor Brightness Control
+I only want to control the laptop screen's brightness via keyboard or UI... My external monitors shouldn't be simultaneously changes in brightness 🤬
+From https://discuss.kde.org/t/disable-kde-monitor-brightness-control/25134/15 it looks like:
+```
+systemctl --user edit plasma-powerdevil.service
+```
+and then put this in the first section
+```
+[Service]
+Environment=POWERDEVIL_NO_DDCUTIL=1
+```
