@@ -186,3 +186,4 @@ and then put this in the first section
 [Service]
 Environment=POWERDEVIL_NO_DDCUTIL=1
 ```
+(This did work)
