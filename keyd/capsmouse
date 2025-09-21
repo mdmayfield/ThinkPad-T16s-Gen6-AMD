@@ -20,6 +20,9 @@ rightshift = clear()
 [command+mousemode]
 a = C-a
 s = C-s
+w = C-w
+r = C-r
+f = C-f
 
 [shift]
 capslock = capslock
