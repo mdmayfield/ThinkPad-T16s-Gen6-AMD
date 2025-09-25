@@ -28,4 +28,23 @@ f = C-f
 capslock = capslock
 
 [capsheld]
-space = clear()
+leftalt = clear()
+; = clear()
+. = kpdot
+/ = kpslash
+j = kp1
+k = kp2
+l = kp3
+- = kpminus
+u = kp4
+i = kp5
+o = kp6
+p = kpplus
+6 = numlock
+7 = kp7
+8 = kp8
+9 = kp9
+0 = kpasterisk
+space = kp0
+enter = kpenter
+= = kpequal
