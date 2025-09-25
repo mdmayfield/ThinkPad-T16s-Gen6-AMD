@@ -1,6 +1,9 @@
 [main]
 capslock = overload(capsheld, toggle(mousemode))
 
+[shift+main]
+capslock = layer(capsheld)
+
 [mousemode]
 d = leftmouse
 e = rightmouse
@@ -24,11 +27,7 @@ w = C-w
 r = C-r
 f = C-f
 
-[shift]
-capslock = capslock
-
 [capsheld]
-leftalt = clear()
 ; = clear()
 . = kpdot
 / = kpslash
@@ -48,3 +47,5 @@ p = kpplus
 space = kp0
 enter = kpenter
 = = kpequal
+c = capslock
+q = clear()
