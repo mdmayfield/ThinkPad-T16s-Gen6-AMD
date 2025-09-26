@@ -1,4 +1,5 @@
 f23+leftshift+leftmeta = overload(copilotheld, layer(altgr))
+rightmeta = overload(copilotheld, layer(altgr))
 leftalt = layer(command)
 rightalt = layer(command)
 leftmeta = layer(option)
